@@ -22,3 +22,7 @@ jobs:
                 port: 22
                 script: |
                     ls
+                    cd week-25-ci-cd
+                    git pull origin main
+                    pnpm install
+                    echo "everythign set here"
