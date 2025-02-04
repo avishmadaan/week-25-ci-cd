@@ -2,11 +2,8 @@
   "name": "@repo/db",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "build":"tsc -b"
-  },
   "exports":{
-    "./client":"./dist/index.js"
+    "./client":"./src/index.ts"
 
   },
   "keywords": [],

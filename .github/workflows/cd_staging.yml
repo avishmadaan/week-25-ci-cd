@@ -1,0 +1,21 @@
+name: Deploy to staging
+on:
+    push:
+        branches: [main]
+
+jobs:
+    redeploy_everything:
+        runs-on: ubuntu-latest
+        name: Deploy everything to staging cluster
+        steps:
+            - name: Checkout the code
+              uses: actions/checkout@v2
+
+            - name: executing remote ssh commands using password
+              uses: appleboy/ssh-action@v1.2.0
+              with:
+                host: 139.59.43.39
+                username: ubuntu
+                key: ${{ secrets.PRIVATE_SSH_KEY }}
+                port: 22
+                script: whoami
