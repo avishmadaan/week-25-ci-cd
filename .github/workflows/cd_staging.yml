@@ -11,11 +11,20 @@ jobs:
             - name: Checkout the code
               uses: actions/checkout@v2
 
-            - name: executing remote ssh commands using password
+            - name: Verify SSH key is set
+              run: |
+                if [ -z "${{ secrets.SSH_PRIVATE_KEY }}" ]; then
+                  echo "SSH key is not set!"
+                  exit 1
+                else
+                  echo "SSH key is set."
+                fi
+
+            - name: executing remote ssh commands using ssh key
               uses: appleboy/ssh-action@v1.2.0
               with:
                 host: 139.59.43.39
-                username: ubuntu
-                key: ${{ secrets.SSH_PRIVATE_KEY}}
+                username: root
+                key: ${{ secrets.SSH_PRIVATE_KEY }}
                 port: 22
                 script: whoami 
