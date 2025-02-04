@@ -24,5 +24,6 @@ jobs:
                     ls
                     cd week-25-ci-cd
                     git pull origin main
+                    npm install -g pnpm
                     pnpm install
                     echo "everythign set here"
