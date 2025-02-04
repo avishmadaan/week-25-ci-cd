@@ -10,7 +10,7 @@ export default async function Home() {
 
       <div className="bg-red-700 flex-grow"  id="inner">
 
-        This is really a good tech
+        This is really a good tech and new skills
       </div>
 
   <div className="flex-col flex space-x-2 p-6  bg-amber-700">
