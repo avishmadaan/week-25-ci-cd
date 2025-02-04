@@ -24,6 +24,7 @@ jobs:
                     ls
                     cd week-25-ci-cd
                     git pull origin main
+                    export PATH=/root/.nvm/versions/node/v22.13.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
                     npm install -g pnpm
                     pnpm install
                     echo "everythign set here"
