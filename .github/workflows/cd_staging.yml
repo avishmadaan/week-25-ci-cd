@@ -27,3 +27,7 @@ jobs:
                     npm install -g pnpm
                     pnpm install
                     echo "everything set here"
+                    pnpm run build
+                    pm2 restart http
+                    pm2 restart web
+                    pm2 restart ws-server
