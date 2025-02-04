@@ -21,10 +21,9 @@ jobs:
                 key: ${{ secrets.SSH_PRIVATE_KEY }}
                 port: 22
                 script: |
-                    ls
+                    export PATH=/root/.nvm/versions/node/v20.18.2/bin:$PATH
                     cd week-25-ci-cd
                     git pull origin main
-                    export PATH=$PATH:/usr/local/bin
                     npm install -g pnpm
                     pnpm install
-                    echo "everythign set here"
+                    echo "everything set here"
